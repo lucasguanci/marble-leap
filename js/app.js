@@ -143,6 +143,10 @@ $(document).ready(function(){
          self.connected = true;
          console.log(self.name+" is connected.");
          $("div.device-"+self.name).css("opacity",1);
+         // set status
+         if ( self.status===null && self.name!="led" ) {
+           self.setStatus();
+         }
        } else {
          self.connected = false;
          console.log(self.name+" is not connected.");
@@ -186,7 +190,6 @@ $(document).ready(function(){
    this.init = function() {
      this.checkConnection(this);
      if ( this.name != "led" ) {
-       this.setStatus();
        this.statusChanged(this.events.statusChanged);
      }
      this.bindSwitch(this.switch);
