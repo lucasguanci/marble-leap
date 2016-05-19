@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Marble IoT</title>
+
+    <!-- Bootstrap -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet">
+    <!-- CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container main">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="marble-leap">MARBLE LEAP</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-3">
+          <div class="device-wrapper device-clock">
+            <!-- <div class="device-name">Orologio</div> -->
+            <div class="device-icon">
+              <img src="img/icon-clock.png" />
+            </div>
+            <input type="checkbox" name="clockSwitch">
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-3">
+          <div class="device-wrapper device-board">
+            <div class="device-icon">
+              <img src="img/icon-board.png" />
+            </div>
+            <input type="checkbox" name="boardSwitch">
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-3">
+          <div class="device-wrapper device-lamp">
+            <div class="device-icon">
+              <img src="img/icon-lamp.png" />
+            </div>
+            <input type="checkbox" name="lampSwitch">
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-3">
+          <div class="device-wrapper device-led">
+            <div class="device-icon">
+              <img src="img/icon-led.png" />
+            </div>
+            <button class="btn btn-default" name="ledSwitch">switch color</button>
+          </div>
+        </div>
+        <div
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+    <!-- Particle JS SDK -->
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/particle-api-js/5/particle.min.js">
+    </script>
+    <!-- app.js -->
+    <script src="js/app.js"></script>
+  </body>
+</html>

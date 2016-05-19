@@ -1,0 +1,33 @@
+body {
+  background-color: rgb(199,150,150);
+  color: white;
+}
+
+div.container.main {
+  margin: 2em auto;
+  text-align: center;
+}
+h1.marble-leap {
+  margin: 0.5em auto 1.5em auto;
+}
+div.device-wrapper {
+  margin-bottom: 2em;
+  opacity: 0.4;
+}
+div.device-name {
+  margin-bottom: 0.25em;
+}
+div.device-icon {
+  margin-bottom: 0.5em;
+}
+div.device-icon img {
+  height: 64px;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary {
+  background: #CA6142;
+}
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+  outline: 5px auto #CA6142;
+}
