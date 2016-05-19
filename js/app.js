@@ -1,23 +1,65 @@
 var particle = new Particle();
-var token = "e288cfdb30758d702a08105037aaa18cf32ac4db";
+var token = "e01ac33b287dafe5f610a76532a0f1875d7a7fb2";
 
 /**
  * Devices
  */
  // clock
 var params = {
-  name: "clock",
-  id: "2c0020000a47343432313031",
+  name: "oro",
+  id: "260030000d47343432313031",
   variables: {
-    status: "clockStatus"
+    status: "oroStatus"
   },
   events: {
-    statusChanged: "clockStatusChanged",
-    switching: "clockSwitching"
+    statusChanged: "oroStatusChanged",
+    switching: "oroSwitching"
   },
-  switch: "clockSwitch"
+  switch: "oroSwitch"
 }
 var clock = new Device(params);
+// lamp
+var params = {
+ name: "lamp",
+ id: "22002e000947343432313031",
+ variables: {
+   status: "lampStatus"
+ },
+ events: {
+   statusChanged: "lampStatusChanged",
+   switching: "lampSwitching"
+ },
+ switch: "lampSwitch"
+}
+var lamp = new Device(params);
+// board
+var params = {
+ name: "board",
+ id: "1e001f000747343337373738",
+ variables: {
+   status: "boardStatus"
+ },
+ events: {
+   statusChanged: "boardStatusChanged",
+   switching: "boardSwitching"
+ },
+ switch: "boardSwitch"
+}
+var board = new Device(params);
+// echo
+var params = {
+ name: "led",
+ id: "1e001f000747343337373738",
+ variables: {
+   status: "ledStatus"
+ },
+ events: {
+   statusChanged: "ledStatusChanged",
+   switching: "ledSwitching"
+ },
+ switch: "ledSwitch"
+}
+var echo = new Device(params);
 
 /**
  * Main
@@ -32,11 +74,14 @@ $(document).ready(function(){
  */
  // connect to Particle
  function connectParticle() {
-   particle.login({username: 'luca.sguanci@gmail.com', password: 'London#2012'})
+   particle.login({username: 'valentina.lapolla@gmail.com', password: 'mocamboiot30'})
      .then(function(data){
        console.log('API call completed on promise resolve: ', data.body.access_token);
        // init devices
        clock.init();
+       lamp.init();
+       board.init();
+       echo.init();
      },
      function(err) {
        console.log('API call completed on promise fail: ', err);
@@ -140,9 +185,11 @@ $(document).ready(function(){
    };
    this.init = function() {
      this.checkConnection(this);
-     this.setStatus();
-     this.statusChanged(this.events.statusChanged);
+     if ( this.name != "led" ) {
+       this.setStatus();
+       this.statusChanged(this.events.statusChanged);
+     }
      this.bindSwitch(this.switch);
      window.setInterval(this.checkConnection, 10000, this);
-   }
+   };
  }
